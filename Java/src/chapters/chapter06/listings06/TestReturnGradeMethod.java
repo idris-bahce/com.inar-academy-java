@@ -5,14 +5,15 @@ public class TestReturnGradeMethod {
         System.out.println("The grade is " + getGrade(95));
         System.out.println("The grade is " + getGrade(75));
     }
-    public static char getGrade(double x){
-        if (x >=90) {
+    public static char getGrade(double score){
+
+        if (score >=90) {
             return 'A';
-        } else if (x >= 80) {
+        } else if (score >= 80) {
             return 'B';
-        }else if (x >= 70) {
+        }else if (score >= 70) {
             return 'C';
-        }else if (x >= 60) {
+        }else if (score >= 60) {
             return 'D';
         }else {
             return 'F';
