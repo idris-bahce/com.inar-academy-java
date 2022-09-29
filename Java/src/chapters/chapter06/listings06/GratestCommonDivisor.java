@@ -8,20 +8,19 @@ public class GratestCommonDivisor {
         System.out.println("Enter second integer: ");
         int num2 = in.nextInt();
 
-        int sgcd = getSgcd(num1, num2);
-        System.out.println("Greatest common divisor of this two integers is: " + sgcd);
+        int gcd = gcd(num1, num2);
+
+        System.out.println("The greatest common divisor of this two integers is:  " + gcd);
     }
 
-    private static int getSgcd(int num1, int num2) {
-        int sgcd = 1;
-        int divisor = 2;
-
-        while (divisor <= num1 && divisor <= num2) {
-            if (num1 % divisor == 0 && num2 % divisor == 0) {
-                sgcd=divisor;
+    public static int gcd(int x, int y) {
+        int greatestCommonDivisor = 1;
+        int min = Math.min(x, y);
+        for (int i = 1; i < min; i++) {
+            if(x % i == 0 && y % i == 0){
+                greatestCommonDivisor = i;
             }
-            divisor++;
         }
-        return sgcd;
+        return greatestCommonDivisor;
     }
 }
