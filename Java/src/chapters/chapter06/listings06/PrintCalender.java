@@ -10,6 +10,8 @@ public class PrintCalender {
         int month = in.nextInt();
         if (month < 1 && month > 12) {
             System.out.println("Invalid input!");
+        } else if (year < 1800) {
+            System.out.println("Invalid input!");
         } else {
             printMonth(month, year);
         }
@@ -86,9 +88,9 @@ public class PrintCalender {
     public static int getNumberOfDaysInMonth(int month, int year) {
         if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
             return 31;
-        } else if (isLeapYear(year) && month==2) {
+        } else if (isLeapYear(year) && month == 2) {
             return 29;
-        } else if (!isLeapYear(year) && month==2) {
+        } else if (!isLeapYear(year) && month == 2) {
             return 28;
         } else {
             return 30;
