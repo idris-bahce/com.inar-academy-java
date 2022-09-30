@@ -10,7 +10,7 @@ public class Excercise6_01 {
         }
     }
 
-    private static int getPentegonalNum(int n) {
+    public static int getPentegonalNum(int n) {
         int result = n * (3 * n - 1)/2;
         return result;
     }
