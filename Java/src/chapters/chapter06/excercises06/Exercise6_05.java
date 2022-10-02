@@ -2,7 +2,7 @@ package chapters.chapter06.excercises06;
 
 import java.util.Scanner;
 
-public class Excercise6_05 {
+public class Exercise6_05 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter three integer to align them increasingly:");

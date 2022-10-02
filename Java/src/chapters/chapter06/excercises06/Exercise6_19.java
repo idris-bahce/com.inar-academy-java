@@ -2,7 +2,7 @@ package chapters.chapter06.excercises06;
 
 import java.util.Scanner;
 
-public class MyTriangleExercise6_19 {
+public class Exercise6_19 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter three points for a triangle: ");
