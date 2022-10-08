@@ -21,11 +21,10 @@ public class Exercise7_14 {
     public static int gcd(int... numbers) {
         int gcd = 0;
         int minimum = getTheMinimumIntegerOfArray(numbers);
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = minimum; j > 0; j--) {
-                if (numbers[i] % j == 0) {
-                    gcd = j;
-                }
+        for (int j = 0; j <numbers.length; j++) {
+            if (numbers[0] % j == 0&&numbers[1] % j == 0&&numbers[2] % j == 0&&numbers[3] % j == 0&&numbers[4] % j == 0) {
+                gcd = j;
+                return gcd;
             }
         }
         return gcd;
