@@ -1,5 +1,5 @@
 package chapters.chapter07.exercises;
-
+//Unfinished
 import java.util.Scanner;
 
 public class Exercise7_21 {

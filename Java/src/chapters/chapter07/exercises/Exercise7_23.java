@@ -1,5 +1,5 @@
 package chapters.chapter07.exercises;
-
+//Unfinished
 public class Exercise7_23 {
     public static void main(String[] args) {
         boolean[] lockers = new boolean[100];

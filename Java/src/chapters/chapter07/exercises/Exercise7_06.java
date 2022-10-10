@@ -1,5 +1,5 @@
 package chapters.chapter07.exercises;
-
+//Unfinished
 public class Exercise7_06 {
     public static void main(String[] args) {
         final int NUMBER_OF_PRIMES = 50;
