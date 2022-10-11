@@ -1,68 +1,50 @@
 package chapters.chapter07.exercises;
-//Unfinished
-public class Exercise7_29 {
-    public static void main(String[] args) {
-        int[] pickFourCards = getFourCards();
-        int[] spades = getTheSpades();
-        int[] clubs = getTheClubs();
-        int[] hearts = getTheHearts();
-        int[] diamonds = getTheDiamonds();
 
-        displayTheSum(pickFourCards,spades,clubs,hearts,diamonds);
+public class Exercise7_29 {
+
+    public static void main(String[] args) {
+
+        int[] fourPick = getTheFourPick();
+        printTheCards(fourPick);
+
     }
 
-    public static void displayTheSum(int[] pickFourCards, int[] spades, int[] clubs, int[] hearts, int[] diamonds) {
-        int sum = 0;
-        while (sum != 24){
-            sum = spades[pickFourCards[0]] + clubs[pickFourCards[1]] + hearts[pickFourCards[2]] + diamonds[pickFourCards[3]];
+    private static void printTheCards(int[] fourPick) {
+        int[] arrOfCards = getTheCards(fourPick);
+        String[] suits = {"Spades", "Heart", "Diamonds", "Clubs"};
+        String[] ranks = {"King", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen"};
+        for (int i = 0; i < arrOfCards.length; i++) {
+            System.out.println(suits[arrOfCards[i]] + " of " + ranks[fourPick[i] % 13]);
         }
     }
 
-    public static int[] getFourCards() {
+    private static int[] getTheCards(int[] fourPick) {
         int[] arr = new int[4];
-        int index = 0;
-        int counter = 0;
-        while (counter<4){
-            int random = (int) (Math.random() * 52);
-            if (arr[index] != random){
-                arr[index] = random;
-                index++;
-                counter++;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = fourPick[i] / 13;
+        }
+        return arr;
+    }
+
+    private static int[] getTheFourPick() {
+        int [] arr = new int[4];
+        while (!isSumOfTheElements24(arr)) {
+            for (int i = 0; i < 4; i++) {
+                int random = (int) (Math.random() * 52);
+                arr[i] = random;
             }
         }
         return arr;
     }
 
-    public static int[] getTheDiamonds() {
-        int[] arr = new int[13];
+    private static boolean isSumOfTheElements24(int[] arr) {
+        int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
+            sum += arr[i]%13;
         }
-        return arr;
+        if (sum==24){
+            return true;
+        }else
+            return false;
     }
-
-    public static int[] getTheHearts() {
-        int[] arr = new int[13];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
-        }
-        return arr;
-    }
-
-    public static int[] getTheClubs() {
-        int[] arr = new int[13];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
-        }
-        return arr;
-    }
-
-    public static int[] getTheSpades() {
-        int[] arr = new int[13];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
-        }
-        return arr;
-    }
-
 }
