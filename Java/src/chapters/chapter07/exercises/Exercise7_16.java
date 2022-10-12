@@ -2,10 +2,12 @@ package chapters.chapter07.exercises;
 
 import java.util.Arrays;
 
+import static java.util.Arrays.binarySearch;
+
 public class Exercise7_16 {
     public static void main(String[] args) {
         int[] arr = getTheRandomlyGenerratedArray();
-        int randomNumber = (int)(Math.random() * 100_000);
+        int randomNumber = (int)(Math.random() * 10000000);
 
         printLinear(arr, randomNumber);
 
@@ -25,28 +27,16 @@ public class Exercise7_16 {
         long endTime;
         long executionTime;
         long startTime;
+        sortTheArray(arr);
         startTime = System.currentTimeMillis();
-        int result2 = getTheBinarySearch(arr, randomNumber);
+        int result2 = binarySearch(arr, randomNumber);
         System.out.println("The number we search is in the " + result2);
         endTime = System.currentTimeMillis();
         executionTime = endTime - startTime;
         System.out.println("Process of this task pasts " + executionTime + " milliseconds.");
     }
-
-    public static int getTheBinarySearch(int[] arr, int randomNumber) {
+    public static void sortTheArray(int[] arr){
         Arrays.sort(arr);
-        int low = 0;
-        int high = arr.length - 1;
-        while (high >= low) {
-            int mid = (low + high) / 2;
-            if (randomNumber < arr[mid])
-                high = mid - 1;
-            else if (randomNumber == arr[mid])
-                return mid;
-            else
-                low = mid + 1;
-        }
-        return -1;
     }
 
     public static int getTheLinearSearch(int[] arr, int randomNumber) {
@@ -60,9 +50,9 @@ public class Exercise7_16 {
     }
 
     public static int[] getTheRandomlyGenerratedArray() {
-        int[] arr = new int[100_000];
+        int[] arr = new int[10000000];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * 100_000);
+            arr[i] = (int) (Math.random() * 10000000);
         }
         return arr;
     }
