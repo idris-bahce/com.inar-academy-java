@@ -17,22 +17,28 @@ public class CheckSudokuSolution {
     }
 
     private static boolean isLittleBoxesUnique(int[][] givenSudoku) {
-
+        boolean isLittleBoxesValid = false;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 int[] littleBox = new int[9];
                 int index = 0;
-                for (int row = 0; row < i * 3 + 3; row++) {
-                    for (int column = 0; column < j * 3 + 3; column++) {
+                for (int row = i * 3; row < i * 3 + 3; row++) {
+                    for (int column = j * 3; column < j * 3 + 3; column++) {
                         littleBox[index] = givenSudoku[row][column];
                         index++;
                     }
                 }if (isLittleBoxValid(littleBox)){
-                    return true;
+                    isLittleBoxesValid = true;
+                }else {
+                    isLittleBoxesValid = false;
+                    break;
                 }
             }
         }
-        return false;
+        if (isLittleBoxesValid){
+            return true;
+        }else
+            return false;
     }
 
     private static boolean isLittleBoxValid(int[] littleBox) {
