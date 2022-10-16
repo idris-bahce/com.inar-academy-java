@@ -14,7 +14,7 @@ public class Exercise7_10 {
 
     }
     public static int indexOfSmallestElement(double[] array){
-        double min = 1000;
+        double min = Double.MAX_VALUE;
         for (int i = 0; i < array.length; i++) {
             if (array[i]<min&&array[i]>1){
                 return i;
