@@ -10,25 +10,56 @@ public class Exercise8_06 {
         System.out.println("Enter matrix2: ");
         double[][] matrix2 = getTheMatrix2(in);
         double[][] multiply = multiplyMatrix(matrix1,matrix2);
+        printMultiply(matrix1,matrix2,multiply);
+    }
+
+    private static void printMultiply(double[][] matrix1, double[][] matrix2, double[][] multiply) {
         for (int i = 0; i < multiply.length; i++) {
-            for (int j = 0; j < multiply[i].length; j++) {
-                System.out.print(multiply[i][j] + " ");
+            for (int j = 0; j < matrix1[i].length; j++) {
+                System.out.printf("%4.1f",matrix1[i][j]);
+                if (j!=matrix1[i].length -1){
+                    continue;
+                }
+                if (i==1){
+                    System.out.print("  *  ");
+                }else {
+                    System.out.print("     ");
+                }
             }
+            for (int j = 0; j < matrix2[i].length; j++) {
+                System.out.printf("%4.1f",matrix2[i][j] );
+                if (j!=matrix1[i].length -1){
+                    continue;
+                }
+                if (i==1){
+                    System.out.print("  =  ");
+                }else {
+                    System.out.print("     ");
+                }
+            }
+            for (int j = 0; j < multiply[i].length; j++) {
+                System.out.printf("%5.1f",multiply[i][j]);
+            }
+
             System.out.println();
         }
     }
 
     private static double[][] multiplyMatrix(double[][] matrix1, double[][] matrix2) {
         double[][] multiply = new double[3][3];
-        int index = 0;
-        for (int i = 0; i < multiply.length; i++) {
-            for (int j = 0; j < multiply[i].length; j++) {
-                for (int k = 0; k < matrix1.length; k++) {
-                    for (int l = 0; l < matrix1[k].length; l++) {
-                        multiply[i][j] += matrix1[k][l] * matrix2[l][k];
-                    }
+        int indexColumn = 0;
+        int indexRow = 0;
+        while(indexRow<multiply.length) {
+            for (int i = 0; i < matrix1.length; i++) {
+                for (int j = 0; j < matrix1[i].length; j++) {
+                    multiply[indexRow][indexColumn] += matrix1[indexRow][j] * matrix2[j][i];
+                }
+                indexColumn++;
+                if (indexColumn==3){
+                    indexColumn=0;
                 }
             }
+            indexRow++;
         }
         return multiply;
     }
