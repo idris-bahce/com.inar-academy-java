@@ -22,9 +22,18 @@ public class FindNearestPoint {
                     p2 = j;
                 }
             }
+        }for (int i = 0; i < points.length; i++) {
+            for (int j = 1 + i; j < points.length; j++) {
+                double distance = findTheDistance(points[i][0],points[i][1],points[j][0],points[j][1]);
+                if (distance==minimumDistance){
+                    p1 = i;
+                    p2 = j;
+                    System.out.println("The nearest points are: (" + points[p1][0] + ", " + points[p1][1]
+                            + ") and (" + points[p2][0] + ", " + points[p2][1] + ")" );
+                }
+            }
         }
-        System.out.println("The nearest points are: (" + points[p1][0] + ", " + points[p1][1]
-                + ") and (" + points[p2][0] + ", " + points[p2][1] + ")" );
+
     }
 
     private static double findTheDistance(double x1, double y1, double x2, double y2) {
