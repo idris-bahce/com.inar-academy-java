@@ -13,6 +13,9 @@ public class Exercise8_09 {
             if (counter==9){
                 tableArr = getTheTable();
                 printTheTable(tableArr);
+                oArr = emptyTheArray();
+                xArr = emptyTheArray();
+                counter=0;
             }
             takeTheInputOfX(xArr);
             printTheNewTable(xArr, oArr, tableArr);
@@ -23,6 +26,13 @@ public class Exercise8_09 {
                 System.out.println(whoWins + " player won.");
                 break;
             }
+            if (counter==9){
+                tableArr = getTheTable();
+                printTheTable(tableArr);
+                xArr = emptyTheArray();
+                oArr = emptyTheArray();
+                counter=0;
+            }
             takeTheInputOfO(oArr);
             printTheNewTable(xArr, oArr, tableArr);
             printTheTable(tableArr);
@@ -32,6 +42,13 @@ public class Exercise8_09 {
                 System.out.println(whoWins + " player won.");
             }
         } while (!isThereAWinner(tableArr));
+    }
+
+    private static char[][] emptyTheArray() {
+
+        char[][] arr = new char[3][3];
+
+        return arr;
     }
 
     private static char whoWins(String[][] tableArr) {
