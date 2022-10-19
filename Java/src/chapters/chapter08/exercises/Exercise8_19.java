@@ -6,19 +6,64 @@ public class Exercise8_19 {
     public static void main(String[] args) {
         int[][] arr = getTheArray();
         printTheArray(arr);
-        if (isThere4ConsequtiveInRow(arr) || isThere4ConsequtiveInCol(arr)){//||isThere4ConsequtiveInDiagonal(arr)){
+        if (isThere4ConsequtiveInRow(arr) || isThere4ConsequtiveInCol(arr)||isThere4ConsequtiveInDiagonal(arr)) {
             System.out.println("Yes, there are.");
         } else
             System.out.println("No, there are not.");
     }
 
-  //  private static boolean isThere4ConsequtiveInDiagonal(int[][] arr) {
-  //      for (int i = 0; i < arr.length; i++) {
-  //          for (int j = 0; j < arr[i].length; j++) {
-  //
-  //          }
-  //      }
-  //  }
+    private static boolean isThere4ConsequtiveInDiagonal(int[][] arr) {
+        for (int row = 3; row < arr.length; row++) {
+            int col = 0;
+            int row2 = row;
+            int col2 = col;
+            for (int i = row; i >= 3; i--) {
+                int loopController = 0;
+                int k = 1;
+                int l = 1;
+                int trueCounter = 0;
+                while (loopController < 3) {//because we are looking for 4 consecutive number and we count 0 too.
+                    if (arr[row2][col2] == arr[row2 - k][col2 + l]) {
+                        trueCounter++;
+                        if (trueCounter == 3) {
+                            return true;
+                        }
+                    }
+                    l++;
+                    k++;
+                    loopController++;
+                }
+                row2--;
+                col2++;
+            }
+        }
+        int col = 1;
+        for (int row = arr.length - 1; row >= 3; row--) {
+            int row2 = arr.length-1;
+            int col2 = col;
+            for (int i = row; i >= 3; i--) {
+                int loopController = 0;
+                int k = 1;
+                int l = 1;
+                int trueCounter = 0;
+                while (loopController < 3) {//because we are looking for 4 consecutive number and we count 0 too.
+                    if (arr[row2][col2] == arr[row2 - k][col2 + l]) {
+                        trueCounter++;
+                        if (trueCounter == 3) {
+                            return true;
+                        }
+                    }
+                    l++;
+                    k++;
+                    loopController++;
+                }
+                row2--;
+                col2++;
+            }
+            col++;
+        }
+        return false;
+    }
 
     private static boolean isThere4ConsequtiveInCol(int[][] arr) {
         for (int i = 0; i < arr[0].length; i++) {
@@ -28,13 +73,13 @@ public class Exercise8_19 {
                     if (arr[j][i] == arr[k][i]) {
                         fourCounter++;
                         if (fourCounter == 3) {
-                           return true;
+                            return true;
                         }
                     }
                 }
             }
         }
-            return false;
+        return false;
     }
 
     private static boolean isThere4ConsequtiveInRow(int[][] arr) {
