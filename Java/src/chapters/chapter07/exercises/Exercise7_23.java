@@ -8,7 +8,7 @@ public class Exercise7_23 {
     }
 
     public static void printTheOpenLockers(boolean[] lockers) {
-        System.out.println("Oen lockers are: ");
+        System.out.println("Open lockers are: ");
         for (int i = 0; i < lockers.length; i++) {
             if (lockers[i]){
                 System.out.print(i + " ");
