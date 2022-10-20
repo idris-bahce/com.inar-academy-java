@@ -62,6 +62,57 @@ public class Exercise8_19 {
             }
             col++;
         }
+        int secondLoopIterator = 1;
+        for (int row = arr.length - 4; row >= 0; row--) {
+            int row2 = row;
+            int col2 = arr[0].length-1;
+            for (int i = secondLoopIterator; i > 0; i--) {
+                int loopController = 0;
+                int k = 1;
+                int l = 1;
+                int trueCounter = 0;
+                while (loopController < 3) {//because we are looking for 4 consecutive number and we count 0 too.
+                    if (arr[row2][col2] == arr[row2 + k][col2 - l]) {
+                        trueCounter++;
+                        if (trueCounter == 3) {
+                            return true;
+                        }
+                    }
+                    l++;
+                    k++;
+                    loopController++;
+                }
+                row2++;
+                col2--;
+            }
+            secondLoopIterator++;
+        }
+        int row = 0;
+        secondLoopIterator = 0;
+        for (int col3 = arr.length-1; col3 >= 3; col3--) {
+            int row2 = row;
+            int col2 = col3;
+            for (int i = secondLoopIterator; i < 3; i++) {
+                int loopController = 0;
+                int k = 1;
+                int l = 1;
+                int trueCounter = 0;
+                while (loopController < 3) {//because we are looking for 4 consecutive number and we count 0 too.
+                    if (arr[row2][col2] == arr[row2 + k][col2 - l]) {
+                        trueCounter++;
+                        if (trueCounter == 3) {
+                            return true;
+                        }
+                    }
+                    l++;
+                    k++;
+                    loopController++;
+                }
+                row2++;
+                col2--;
+            }
+            secondLoopIterator++;
+        }
         return false;
     }
 
