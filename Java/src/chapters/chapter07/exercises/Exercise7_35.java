@@ -8,7 +8,6 @@ public class Exercise7_35 {
         do {
             String[] words = getTheWordList();
             String word = getTheWord(words);
-            System.out.println("Here is your word: ");
             char[] question = getTheRandomWord(word);
             int trueCounter = 0;
             int wrongCounter = 0;
@@ -38,11 +37,7 @@ public class Exercise7_35 {
     }
 
     private static void displayTheChangedCharArray(int changingCharacterIndex, char ch, char[] question) {
-        char temp = question[changingCharacterIndex];
         question[changingCharacterIndex] = ch;
-        for (int i = 0; i < question.length; i++) {
-            System.out.print(question[i]);
-        }
     }
 
     private static int getTheChangingCharacterIndex(char ch, String word) {
@@ -79,7 +74,7 @@ public class Exercise7_35 {
 
     private static String[] getTheWordList() {
 
-        String[] arr = {"write", "that", "word", "gun", "power", "student", "school"};
+        String[] arr = {"write", "what", "word", "gun", "power", "student", "table"};
         return arr;
     }
 }
