@@ -2,31 +2,30 @@ package chapters.chapter08.exercises;
 
 import java.util.Scanner;
 
-public class Exercise8_27 {
+public class Exercise8_28 {
     public static void main(String[] args) {
         double[][] arr = getTheArray();
-         sortColumns(arr);
+        double[][] arr2 = getTheArray();
+        if (equals(arr,arr2)){
+            System.out.println("The two arrays are strictly identical.");
+        }else
+            System.out.println("The two arrays are not strictly identical");
+    }
+    public static boolean equals(double[][] arr, double[][] arr2){
+        boolean isAllSame = false;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-
-    public static void sortColumns(double[][] m) {
-
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[i].length-1; j++) {
-                for (int k = j + 1; k < m[i].length; k++) {
-                    if (m[j][i] > m[k][i]) {
-                        double temp = m[j][i];
-                        m[j][i] = m[k][i];
-                        m[k][i] = temp;
-                    }
+                if (arr[i][j]==arr2[i][j]){
+                    isAllSame = true;
+                }else {
+                    return false;
                 }
             }
         }
+        if (isAllSame){
+            return true;
+        }else
+            return false;
     }
     private static double[][] getTheArray() {
         double[][] arr = new double[3][3];
