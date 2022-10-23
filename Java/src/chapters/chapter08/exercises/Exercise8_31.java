@@ -9,12 +9,12 @@ public class Exercise8_31 {
         double interSectionx = ((intersectingPoints[0] * points[0][0]) -
                 (intersectingPoints[1] * points[2][0]) + points[2][1] - points[0][1]) /
                 (intersectingPoints[0] - intersectingPoints[1]);
-        double intSectiony = intersectingPoints[0] * (interSectionx - points[0][0]) + points[0][1] + intersectingPoints[1]
-                * (interSectionx - points[2][0]) + points[2][1];
+        double intSectiony = (intersectingPoints[0] * (interSectionx - points[0][0]) + points[0][1] + intersectingPoints[1]
+                * (interSectionx - points[2][0]) + points[2][1])/2;
         if (intersectingPoints == null) {
             System.out.println("Two lines are parallel.");
         } else {
-            System.out.println("The intersection point is: (" + interSectionx + ", " + intSectiony + ")");
+            System.out.printf("The intersection point is: (%2.4f, %2.4f)",interSectionx, intSectiony);
         }
     }
 
