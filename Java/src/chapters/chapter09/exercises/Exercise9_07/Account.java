@@ -14,6 +14,7 @@ public class Account {
     public Account(int id, double balance) {
         this.id = id;
         this.balance = balance;
+        dateCreated = new Date();
     }
 
     public int getId() {
@@ -28,7 +29,7 @@ public class Account {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -36,16 +37,23 @@ public class Account {
         return annualInterestRate;
     }
 
-    public void setAnnualInterestRate(int annualInterestRate) {
+    public void setAnnualInterestRate(double annualInterestRate) {
         this.annualInterestRate = annualInterestRate;
     }
 
     public String getDateCreated() {
-        return getDateCreated().toString();
+        return dateCreated.toString();
     }
 
     public double getMonthlyInterestRate() {
         return getAnnualInterestRate() / 1200;
     }
 
+    public void withdraw(double withdrawAmount){
+        setBalance(getBalance() - withdrawAmount);
+    }
+
+    public void deposit(double depositAmount){
+        setBalance(getBalance() + depositAmount);
+    }
 }
