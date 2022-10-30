@@ -23,9 +23,9 @@ public class Exercise8_35 {
         int size = input.nextInt();
         int[][] matrix = new int[size][size];
         System.out.println("Enter the matrix row by row: ");
-        for (int r = 0; r < matrix.length; r++) {
-            for (int c = 0; c < matrix.length; c++) {
-                matrix[r][c] = input.nextInt();
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                matrix[i][j] = input.nextInt();
             }
         }
         return matrix;
