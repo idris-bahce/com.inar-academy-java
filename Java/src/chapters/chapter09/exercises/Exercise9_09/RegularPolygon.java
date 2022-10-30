@@ -9,6 +9,9 @@ public class RegularPolygon {
     public RegularPolygon(){
         this(3,1,0,0);
     }
+    public RegularPolygon(int n, double side){
+        this(n,side,0,0);
+    }
 
     public RegularPolygon(int n, double side, double x, double y) {
         this.n = n;
