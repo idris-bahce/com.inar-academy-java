@@ -1,6 +1,6 @@
 package chapters.chapter10.listings;
 
-import chapters.chapter09.listings.Date;
+import java.util.Date;
 
 public class Loan {
     private double annualInterestRate;
