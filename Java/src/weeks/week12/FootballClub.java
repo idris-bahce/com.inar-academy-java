@@ -3,7 +3,7 @@ package weeks.week12;
 public class FootballClub {
     private String clubName;
     private double ticketFee;
-    private double balance;
+    private long balance;
     private String nameOFStadium;
     private int capacityOfStadium;
     private Player[] team;
@@ -12,7 +12,7 @@ public class FootballClub {
         this(40_000_000, "default", 0, "default stadium", 0, new Player[25]);
     }
 
-    public FootballClub(double balance, String clubName, double ticketFee, String nameOFStadium, int capacityOfStadium) {
+    public FootballClub(long balance, String clubName, double ticketFee, String nameOFStadium, int capacityOfStadium) {
         this(40_000_000, "default", 0, "default stadium", 0, new Player[25]);
     }
 
@@ -20,7 +20,7 @@ public class FootballClub {
         this(0, clubName, 0, nameOFStadium, 0, new Player[25]);
     }
 
-    FootballClub(double balance, String clubName, double ticketFee, String nameOFStadium, int capacityOfStadium, Player[] players) {
+    FootballClub(long balance, String clubName, double ticketFee, String nameOFStadium, int capacityOfStadium, Player[] players) {
         this.balance = balance;
         this.clubName = clubName;
         this.ticketFee = ticketFee;
@@ -34,7 +34,7 @@ public class FootballClub {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(long balance) {
         this.balance = balance;
     }
 
