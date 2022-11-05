@@ -10,5 +10,8 @@ public class StringBuilderClass {
         stringBuilder.append("Java");
 
         System.out.println(stringBuilder);
+
+        stringBuilder.insert(11,"HTML and ");
+        System.out.println(stringBuilder);
     }
 }
