@@ -13,5 +13,11 @@ public class StringBuilderClass {
 
         stringBuilder.insert(11,"HTML and ");
         System.out.println(stringBuilder);
+
+        stringBuilder.delete(11,20);
+        System.out.println(stringBuilder);
+
+        stringBuilder.reverse();
+        System.out.println(stringBuilder);
     }
 }
