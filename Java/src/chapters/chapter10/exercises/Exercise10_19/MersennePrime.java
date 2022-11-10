@@ -1,22 +1,21 @@
-package chapters.chapter10.exercises.Exercise10_18;
+package chapters.chapter10.exercises.Exercise10_19;
 
 import java.math.BigInteger;
 
-public class PrimeNumber {
+public class MersennePrime {
     public static void main(String[] args) {
-        BigInteger big = new BigInteger("" + Long.MAX_VALUE);
+        BigInteger mersenne = new BigInteger("2");
+        BigInteger power = new BigInteger("2");
         int counter = 0;
-        System.out.println("Max of long: " + big);
-        System.out.println("---------------------------------");
-        while (counter<5){
-            if (isPrime(big)){
-                System.out.println(big);
+        while (counter <100){
+            BigInteger number = mersenne.multiply(power).subtract(BigInteger.ONE);
+            if(isPrime(number)) {
+                System.out.println((counter + 1) + "-->" + number);
                 counter++;
             }
-            big = big.add(BigInteger.ONE);
+            mersenne = mersenne.multiply(power);
         }
     }
-
     private static boolean isPrime(BigInteger num) {
         BigInteger divisor = new BigInteger("2");
         BigInteger stop = new BigInteger(String.valueOf(num.divide(divisor)));
