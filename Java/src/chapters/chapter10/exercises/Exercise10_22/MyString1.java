@@ -31,10 +31,11 @@ public class MyString1 {
     public MyString1 toLowerCase(){
         char[] chars1 = new char[chars.length];
         for (int i = 0; i < this.chars.length; i++) {
-            if (64<chars[i]&&chars[i]<91){
+            if ('A'<=chars[i]&&chars[i]<='Z'){
                 chars1[i] =(char)((int)chars[i] + 32);
+            }else {
+                chars1[i] = chars[i];
             }
-            chars1[i] = chars[i];
         }
         return new MyString1(chars1);
     }
@@ -50,10 +51,16 @@ public class MyString1 {
         return true;
     }
     public static MyString1 valueOf(int i){
-        String s = "" + i;
-        char[] ch = new char[s.length()];
-        for (int j = 0; j < s.length(); j++) {
-            ch[j] = s.charAt(j);
+        int iForDigitCounter = i;
+        int digitCounter = 0;
+        while (iForDigitCounter > 0){
+            iForDigitCounter /= 10;
+            digitCounter++;
+        }
+        char[] ch = new char[digitCounter];
+        for (int j = digitCounter - 1; j >= 0 ; j--) {
+            ch[j] = (char) ('0' + (i % 10));
+            i /= 10;
         }
         return new MyString1(ch);
     }
