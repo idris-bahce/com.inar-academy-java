@@ -1,14 +1,9 @@
 package chapters.chapter10.exercises.Exercise10_22;
 
 public class MyString1 {
-    private char[] chars = new char[10];
+    private char[] chars;
 
     public MyString1(char[] chars) {
-        if (chars.length>=this.chars.length){
-            char[] temp = new char[this.chars.length * 2];
-            System.arraycopy(this.chars,0,temp,0,this.chars.length);
-            this.chars = temp;
-        }
         this.chars = chars;
     }
     public char charAt(int i){
