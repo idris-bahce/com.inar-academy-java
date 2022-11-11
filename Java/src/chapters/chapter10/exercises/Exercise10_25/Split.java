@@ -18,7 +18,8 @@ public class Split {
             if (s.charAt(i) == regex.charAt(0)){
                 indexEnd = i;
             }
-            strings[i] = s.substring()
+
         }
+        return null;
     }
 }
