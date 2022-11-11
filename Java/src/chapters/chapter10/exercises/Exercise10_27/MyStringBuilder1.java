@@ -23,8 +23,21 @@ public class MyStringBuilder1 {
         String s = "";
         for (int i = 0; i < string.length(); i++) {
             if ('A'<=string.charAt(i)&&string.charAt(i)<='Z'){
-                
+                s = "" + (char)(string.charAt(i) + 32);
+            }else {
+                s = "" + charAt(i);
             }
         }
+        return new MyStringBuilder1(s);
+    }
+    public MyStringBuilder1 substring(int begin, int end){
+        String s = "";
+        for (int i = begin; i < end; i++) {
+            s = "" + string.charAt(i);
+        }
+        return new MyStringBuilder1(s);
+    }
+    public String toString(){
+        
     }
 }
