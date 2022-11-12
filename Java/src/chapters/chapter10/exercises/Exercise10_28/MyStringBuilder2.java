@@ -18,11 +18,16 @@ public class MyStringBuilder2 {
     }
     public MyStringBuilder2 insert(int offset, MyStringBuilder2 s){
         char[] temp = new char[chars.length + s.chars.length];
-        System.arraycopy(chars,offset,temp,chars.length - offset -1,chars.length);
-        chars = temp;
-        for (int i = offset, k = 0; i < chars.length;k++, i++) {
-            chars[offset] = s.chars[k];
+        for (int i = temp.length - 2 - offset, k = offset; i < temp.length;k++, i++) {
+            temp[i] = chars[k];
         }
+        for (int i = 0; i < offset; i++) {
+            temp[i] = chars[i];
+        }
+        for (int i = 0, k = offset; i < s.getChars().length;k++, i++) {
+            temp[k] = s.chars[i];
+        }
+        chars = temp;
         return new MyStringBuilder2(chars);
     }
 
@@ -31,14 +36,16 @@ public class MyStringBuilder2 {
         for (int i = chars.length - 1,k = 0; i >= 0; i--, k++) {
             temp[k] = chars[i];
         }
-        return new MyStringBuilder2(temp);
+        chars = temp;
+        return new MyStringBuilder2(chars);
     }
     public MyStringBuilder2 substring(int begin){
         char[] temp = new char[chars.length - begin];
-        for (int i = begin, k=0; i < temp.length;k++, i++) {
-            temp[k] = chars[i];
+        for (int i = 0, k=begin; i < temp.length;k++, i++) {
+            temp[i] = chars[k];
         }
-        return new MyStringBuilder2(temp);
+        chars = temp;
+        return new MyStringBuilder2(chars);
     }
     public MyStringBuilder2 toUpperCase(){
         char[] temp = new char[chars.length];
@@ -49,7 +56,11 @@ public class MyStringBuilder2 {
                 temp[i]=chars[i];
             }
         }
-        return new MyStringBuilder2(temp);
+        chars = temp;
+        return new MyStringBuilder2(chars);
     }
 
+    public char[] getChars() {
+        return chars;
+    }
 }
