@@ -40,6 +40,16 @@ public class MyStringBuilder2 {
         }
         return new MyStringBuilder2(temp);
     }
-
+    public MyStringBuilder2 toUpperCase(){
+        char[] temp = new char[chars.length];
+        for (int i = 0; i < temp.length; i++) {
+            if ('a'<=chars[i]&&chars[i]<='z'){
+                temp[i] = (char)(chars[i] - 32);
+            }else {
+                temp[i]=chars[i];
+            }
+        }
+        return new MyStringBuilder2(temp);
+    }
 
 }

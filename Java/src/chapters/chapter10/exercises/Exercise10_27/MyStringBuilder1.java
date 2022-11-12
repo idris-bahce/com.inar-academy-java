@@ -25,7 +25,7 @@ public class MyStringBuilder1 {
             if ('A'<=string.charAt(i)&&string.charAt(i)<='Z'){
                 s = s + (char)(string.charAt(i) + 32);
             }else {
-                s = s + charAt(i);
+                s = s + string.charAt(i);
             }
         }
         string = s;
