@@ -32,8 +32,9 @@ public class Bus extends Vehicles{
         System.out.println((isRunning())?"Bus is getting slowing down.":"Your Bus is not running.");
     }
     @Override
-    public void toString(){
-        System.out.println("Your vehicle's brand is: " + super.brand
-        + "\nYour vehicles model is: " + model);
+    public String toString(){
+       return ("Your vehicle's brand is: " + super.brand
+        + "\nYour vehicles model is: " + model
+        + "\nYour vehicle's color is: " + color);
     }
 }
