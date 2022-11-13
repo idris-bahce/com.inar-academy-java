@@ -35,6 +35,7 @@ public class Bus extends Vehicles{
     public String toString(){
        return ("Your vehicle's brand is: " + super.brand
         + "\nYour vehicles model is: " + model
-        + "\nYour vehicle's color is: " + color);
+        + "\nYour vehicle's color is: " + color
+       + "\n" + isRunning());
     }
 }
