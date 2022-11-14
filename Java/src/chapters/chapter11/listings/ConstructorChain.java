@@ -2,7 +2,7 @@ package chapters.chapter11.listings;
 
 public class ConstructorChain {
     public static void main(String[] args) {
-
+        new Professor();
     }
 }
 class Professor extends Employee{
@@ -12,7 +12,7 @@ class Professor extends Employee{
 }
 class Employee extends Human{
     public Employee(){
-        this("We are calling other constructor.");
+        this("We are calling other constructor of Employee.");
         System.out.println("Employee is processed.");
     }
     public Employee(String s){
