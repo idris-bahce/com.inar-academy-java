@@ -1,10 +1,10 @@
 package chapters.chapter10.exercises.Exercise10_26;
 
-import chapters.chapter10.exercises.Exercise10_25.Split;
 
 public class Calculator {
     public static void main(String[] args) {
-        String[] equation = Split.split(args.toString(), "\\s+");
+        String s = (args[0]);
+        String[] equation = s.split( "\\s+");
         char op = '0';
         for (int i = 0; i < equation.length; i++) {
             if (equation[i].charAt(0) == '+' || equation[i].charAt(0) == '-' || equation[i].charAt(0) == '/'
