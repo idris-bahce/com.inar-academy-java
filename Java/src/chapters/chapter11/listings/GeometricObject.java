@@ -8,9 +8,12 @@ public class GeometricObject {
     private Date dateCreated;
 
     public GeometricObject() {
+        dateCreated = new Date();
+        color = "white";
     }
 
     public GeometricObject(String color, boolean filled) {
+        dateCreated = new Date();
         this.color = color;
         this.filled = filled;
     }
@@ -36,11 +39,8 @@ public class GeometricObject {
     }
 
     @Override
-    public String toString() {
-        return "GeometricObject{" +
-                "color='" + color + '\'' +
-                ", filled=" + filled +
-                ", dateCreated=" + dateCreated +
-                '}';
+    public String toString(){
+        return "Created on " + dateCreated + "\n" +
+                "Color is " + color + " and is it filled: " + filled+ "\n" ;
     }
 }

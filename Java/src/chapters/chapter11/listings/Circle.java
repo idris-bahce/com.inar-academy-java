@@ -31,4 +31,12 @@ public class Circle extends GeometricObject {
     public double getDiameter(){
         return 2 * radius;
     }
+    public void printCircle(){
+        System.out.println(toString() +
+                " and the radius is " + radius);
+    }
+    @Override
+    public String toString(){
+        return super.toString() + "Radius is " + radius;
+    }
 }
