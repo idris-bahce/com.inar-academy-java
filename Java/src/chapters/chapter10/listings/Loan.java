@@ -58,4 +58,13 @@ public class Loan {
         return getMonthlyPayment() * numberOfYears * 12;
     }
 
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "annualInterestRate=" + annualInterestRate +
+                ", numberOfYears=" + numberOfYears +
+                ", loanAmount=" + loanAmount +
+                ", loanDate=" + loanDate +
+                '}';
+    }
 }
