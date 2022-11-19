@@ -12,7 +12,7 @@ public class Calculator extends Number {
         super.setNum(super.getNum() + num);
         return super.getNum() + num;
     }
-    public double extract(double num){
+    public double subtract(double num){
         super.setNum(super.getNum() - num);
         return super.getNum() - num;
     }
