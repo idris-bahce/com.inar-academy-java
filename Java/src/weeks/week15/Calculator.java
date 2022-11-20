@@ -22,7 +22,7 @@ public class Calculator extends Number {
     }
     public double divide(double num){
         if (num == 0){
-            System.out.println("Unproper divide.");
+            System.out.println("Can not divide by zero.");
             return -1;
         }else {
             super.setNum(getNum() / num);
@@ -41,6 +41,6 @@ public class Calculator extends Number {
     }
    @Override
    public String toString(){
-       return "Result: " + getNum();
+       return "" + getNum();
    }
 }
