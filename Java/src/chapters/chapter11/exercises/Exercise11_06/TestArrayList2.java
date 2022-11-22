@@ -1,7 +1,7 @@
 package chapters.chapter11.exercises.Exercise11_06;
 
 import chapters.chapter10.listings.Loan;
-import chapters.chapter11.listings.Circle;
+import chapters.chapter11.listings.CircleWithCustomException;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,7 +12,7 @@ public class TestArrayList2 {
         list.add(new Loan());
         list.add(new Date());
         list.add("Hello");
-        list.add(new Circle(5));
+        list.add(new CircleWithCustomException(5));
 
 
         for (Object o : list) {

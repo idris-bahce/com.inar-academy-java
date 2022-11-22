@@ -2,7 +2,7 @@ package chapters.chapter11.listings;
 
 public class TestGeometricObjects {
     public static void main(String[] args) {
-        Circle circle = new Circle(1);
+        CircleWithCustomException circle = new CircleWithCustomException(1);
         circle.printCircle();
         System.out.println("The area is: " + circle.getArea());
         System.out.println("The perimeter is: " + circle.getPerimeter());

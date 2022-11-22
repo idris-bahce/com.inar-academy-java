@@ -1,16 +1,16 @@
 package chapters.chapter11.listings;
 
-public class Circle extends GeometricObject {
+public class CircleWithCustomException extends GeometricObject {
     private double radius;
 
-    public Circle() {
+    public CircleWithCustomException() {
     }
 
-    public Circle(double radius) {
+    public CircleWithCustomException(double radius) {
         this.radius = radius;
     }
 
-    public Circle(String color, boolean filled, double radius) {
+    public CircleWithCustomException(String color, boolean filled, double radius) {
         super(color, filled);
         this.radius = radius;
     }
@@ -41,8 +41,8 @@ public class Circle extends GeometricObject {
     }
     @Override
     public boolean equals(Object o){
-        if (o instanceof Circle){
-            return radius == ((Circle) o).radius;
+        if (o instanceof CircleWithCustomException){
+            return radius == ((CircleWithCustomException) o).radius;
         }else {
             return this == o;
         }

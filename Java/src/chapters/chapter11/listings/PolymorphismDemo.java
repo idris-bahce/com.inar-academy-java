@@ -2,7 +2,7 @@ package chapters.chapter11.listings;
 
 public class PolymorphismDemo {
     public static void main(String[] args) {
-        displayObject(new Circle
+        displayObject(new CircleWithCustomException
                  ( "red", false,1));
          displayObject(new Rectangle
                  ("black", true,1,1));

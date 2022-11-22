@@ -28,10 +28,10 @@ public class TestArrayList {
         }
         System.out.println();
 
-        ArrayList<Circle> circleArrayList = new ArrayList<>();
+        ArrayList<CircleWithCustomException> circleArrayList = new ArrayList<>();
 
-        circleArrayList.add(new Circle(2));
-        circleArrayList.add(new Circle(3));
+        circleArrayList.add(new CircleWithCustomException(2));
+        circleArrayList.add(new CircleWithCustomException(3));
 
         System.out.println("The area of the first circle is: " + circleArrayList.get(0).getArea()
         + "\nThe area of the second circle is: " + circleArrayList.get(1).getArea());
