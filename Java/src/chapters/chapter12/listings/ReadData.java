@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ReadData {
     public static void main(String[] args) throws Exception{
         File file = new File("scores.txt");
-        Scanner in = new Scanner("scores.txt");
+        Scanner in = new Scanner(file);
 
         while (in.hasNext()){
             String firstName = in.next();

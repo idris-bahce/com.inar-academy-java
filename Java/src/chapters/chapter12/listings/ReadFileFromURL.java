@@ -13,6 +13,7 @@ public class ReadFileFromURL {
             Scanner input = new Scanner(url.openStream());
             while (input.hasNext()) {
                 String line = input.nextLine();
+                System.out.println(line);
                 count += line.length();
             }
 
