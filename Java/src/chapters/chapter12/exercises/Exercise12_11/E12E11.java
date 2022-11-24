@@ -1,4 +1,4 @@
-package chapters.chapter12.exercises.Exercise12__11;
+package chapters.chapter12.exercises.Exercise12_11;
 
 import java.io.*;
 import java.io.PrintWriter;
