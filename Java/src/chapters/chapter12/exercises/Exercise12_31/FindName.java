@@ -18,7 +18,7 @@ public class FindName {
     }
 
     private static void findTheRank(int year, String name,char gender) throws IOException {
-        File file = new File("C:\\Users\\idris\\Desktop\\" + year +".txt");
+        File file = new File("C:\\Users\\idris\\Desktop\\babies\\" + year +".txt");
         if (!file.exists()) {
             System.out.println("There isn't any file!");
             System.exit(1);
