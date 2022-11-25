@@ -3,7 +3,7 @@ package chapters.chapter12.exercises.Exercise12_01;
 public class NumberFormatException {
     public static void main(String[] args){
         if (args.length != 3) {
-            System.out.println("Usage: java Calculator operand1 operator operand2");
+            System.out.println("Usage: java NumberFormatException operand1 operator operand2");
             System.exit(0);
         }
             int num1 = 0;
