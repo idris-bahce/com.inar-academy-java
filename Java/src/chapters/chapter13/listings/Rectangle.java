@@ -1,6 +1,6 @@
 package chapters.chapter13.listings;
 
-public class Rectangle extends GeometricObject{
+public class Rectangle extends GeometricObject {
     private double width;
     private double height;
 
@@ -40,11 +40,13 @@ public class Rectangle extends GeometricObject{
         this.height = height;
     }
 
+    @Override
     // Return area
     public double getArea() {
         return width * height;
     }
 
+    @Override
     // Return perimeter
     public double getPerimeter() {
         return 2 * (width + height);
