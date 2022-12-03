@@ -4,15 +4,20 @@ import java.util.GregorianCalendar;
 
 public class Calendar {
     public static void main(String[] args) {
-        if (Integer.parseInt(args[0])<1 || Integer.parseInt(args[0])>12){
-            System.out.println("Invalid input!");
+        if (args.length == 2) {
+            if (Integer.parseInt(args[0]) < 1 || Integer.parseInt(args[0]) > 12) {
+                System.out.println("Invalid input!");
+            }
+            String month = month(args);
+            int year = Integer.parseInt(args[1]);
+            System.out.println("           " + month + " " + year);
+            System.out.println("-----------------------------");
+            System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
+            printMonthBody(month, year, Integer.parseInt(args[0]));
+        }else {
+            java.util.Calendar calendar = new GregorianCalendar();
+            System.out.println(calendar.get(GregorianCalendar.YEAR)+ "/" + calendar.get(GregorianCalendar.MONTH));
         }
-        String month = month(args);
-        int year = Integer.parseInt(args[1]);
-        System.out.println("           " + month + " " + year);
-        System.out.println("-----------------------------");
-        System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
-        printMonthBody(month,year,Integer.parseInt(args[0]));
     }
 
     private static void printMonthBody(String month, int year,int mon) {
