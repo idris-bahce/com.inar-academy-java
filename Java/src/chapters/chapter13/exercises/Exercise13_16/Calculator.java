@@ -13,15 +13,22 @@ public class Calculator {
         String operator = args[1];
 
 
-        long[] op1 = turnOperandToLongArray(operand1);
+        Rational r1 = new Rational(Integer.parseInt(operand1[0]),Integer.parseInt(operand1[1]));
+        Rational r2 = new Rational(Integer.parseInt(operand2[0]),Integer.parseInt(operand2[1]));
 
-        Rational r1 = new Rational()
-    }
-
-    private static long[] turnOperandToLongArray(String[] operand) {
-        long[] arr = new long[2];
-        for (String s : operand) {
-            
+        String print = args[0];
+        switch (operator){
+            case "+" : print += " = " + r1.add(r2);
+                break;
+            case "-" : print += " = " + r1.subtract(r2);
+                break;
+            case "*" : print += " = " + r1.multiply(r2);
+                break;
+            case "/" : print += " = " + r1.divide(r2);
+                break;
         }
+
+        System.out.println(print);
     }
+
 }
