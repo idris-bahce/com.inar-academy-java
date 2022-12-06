@@ -1,4 +1,4 @@
-package arraylist.list;
+package homework.list;
 
 import java.io.File;
 import java.io.FileNotFoundException;
