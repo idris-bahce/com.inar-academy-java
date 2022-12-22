@@ -11,6 +11,10 @@ public class ViewAllOrders_4 {
         logIn(driver);
         Thread.sleep(2000);
         driver.findElement(By.id("ctl00_MainContent_btnCheckAll")).click();
+        Thread.sleep(4000);
+        driver.findElement(By.id("ctl00_MainContent_btnUncheckAll")).click();
+        Thread.sleep(4000);
+        driver.close();
     }
     private static void logIn(WebDriver driver) {
         driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx?ReturnUrl=%2fsamples%2fTestComplete12%2fWebOrders%2fDefault.aspx");
