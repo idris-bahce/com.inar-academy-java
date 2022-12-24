@@ -2,11 +2,11 @@ package Homeworks.week01;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
-public class ProductInformation_5 {
+public class ProductInformation_6 {
     public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
         logIn(driver);
         Thread.sleep(2000);

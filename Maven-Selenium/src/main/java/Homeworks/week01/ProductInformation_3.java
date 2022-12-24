@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class ProductionInformation_3 {
+public class ProductInformation_3 {
     public static void main(String[] args) throws InterruptedException, FileNotFoundException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
