@@ -1,4 +1,4 @@
-package Locators;
+package Udemy.Locators;
 
 import java.time.Duration;
 import org.openqa.selenium.By;

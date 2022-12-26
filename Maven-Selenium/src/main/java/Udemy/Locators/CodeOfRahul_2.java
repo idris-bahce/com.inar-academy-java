@@ -1,4 +1,4 @@
-package Locators;
+package Udemy.Locators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

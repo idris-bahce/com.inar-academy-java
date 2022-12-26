@@ -1,16 +1,16 @@
-package Locators;
+package Udemy.FirstMaven;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 
 import java.time.Duration;
 
-public class Locator_02 {
+public class Locators {
     public static void main(String[] args) {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\idris\\Desktop\\drivers\\geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\idris\\Desktop\\drivers\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
         driver.findElement(By.id("inputUsername")).sendKeys("idris");
         driver.findElement(By.name("inputPassword")).sendKeys("try123");
@@ -30,12 +30,14 @@ public class Locator_02 {
                 Thread.sleep(2000);
                 driver.findElement(By.className("signInBtn")).click();
                 Thread.sleep(2000);
-                driver.findElement(By.xpath("//button[text()='Log Out']")).click();
+                Assert.assertEquals(driver.findElement(By.tagName("p")).getText(),"You are successfully logged in.");
+                Assert.assertEquals(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText(),"Hello idris,");
+                driver.findElement(By.xpath("//*[text()='Log Out']")).click();
                 driver.close();
             }
         } catch (Exception a) {
-           driver.quit();
-           System.exit(0);
+            driver.quit();
+            System.exit(0);
         }
     }
 }
