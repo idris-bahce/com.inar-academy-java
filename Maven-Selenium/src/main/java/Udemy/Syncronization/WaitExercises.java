@@ -18,6 +18,15 @@ public class WaitExercises {
         driver.manage().window().maximize();
 
         addToChart(driver);
+
+        buyItems(driver);
+    }
+
+    private static void buyItems(WebDriver driver) {
+        driver.findElement(By.xpath("//a[@class='cart-icon']")).click();
+        driver.findElement(By.xpath("//div[@class='cart-preview active']//div[@class='action-block']//button[@type='button']")).click();
+        driver.findElement(By.xpath("//input[@placeholder='Enter promo code']")).sendKeys("idr");
+
     }
 
     private static void addToChart(WebDriver driver) {
