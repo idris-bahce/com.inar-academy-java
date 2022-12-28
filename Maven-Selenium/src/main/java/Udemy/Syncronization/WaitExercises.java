@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -13,7 +15,7 @@ public class WaitExercises {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\idris\\Desktop\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         driver.manage().window().maximize();
 
@@ -23,9 +25,13 @@ public class WaitExercises {
     }
 
     private static void buyItems(WebDriver driver) {
+        //explicit wait
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
         driver.findElement(By.xpath("//a[@class='cart-icon']")).click();
         driver.findElement(By.xpath("//div[@class='cart-preview active']//div[@class='action-block']//button[@type='button']")).click();
-        driver.findElement(By.xpath("//input[@placeholder='Enter promo code']")).sendKeys("idr");
+        //explicit wait
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Enter promo code']")));
+        driver.findElement(By.xpath("//input[@placeholder='Enter promo code']")).sendKeys("rahulshettyacademy");
 
     }
 
