@@ -19,11 +19,13 @@ public class ChildBrowser {
         driver.findElement(By.cssSelector(".blinkingText")).click();
         Set<String> windows = driver.getWindowHandles();
         Iterator<String> it = windows.iterator();
-        String childId = ";";
-        while (it.hasNext()){
-            childId = it.next();
-        }
+        String parentId =it.next();
+        String childId = it.next();
         driver.switchTo().window(childId);
-        driver.findElement(By.cssSelector(".im-para.red")).getText();
+        String username =  driver.findElement(By.cssSelector(".im-para.red")).getText().split(" ")[4];
+        driver.switchTo().window(parentId);
+        driver.findElement(By.id("username")).sendKeys(username);
+        
+
     }
 }
