@@ -20,6 +20,7 @@ public class HandlingAjax {
         //move mouse to the location
         actions.moveToElement(driver.findElement(By.id("nav-link-accountList-nav-line-1"))).build().perform();
         //entering letters with capital
-        actions.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").doubleClick().build().perform();
+        actions.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).
+                sendKeys("hello").doubleClick().build().perform();
     }
 }

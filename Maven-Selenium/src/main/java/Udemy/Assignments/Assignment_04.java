@@ -1,4 +1,4 @@
-package Udemy.AjaxCallChildWindowsAndFrames;
+package Udemy.Assignments;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,24 +8,24 @@ import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
-public class ChildBrowser {
+public class Assignment_04 {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\idris\\Desktop\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        driver.get("https://rahulshettyacademy.com/loginpagePractise/#");
+        driver.get("https://the-internet.herokuapp.com/");
         driver.manage().window().maximize();
 
-        driver.findElement(By.cssSelector(".blinkingText")).click();
+        driver.findElement(By.linkText("Multiple Windows")).click();
+        driver.findElement(By.linkText("Click Here")).click();
         Set<String> windows = driver.getWindowHandles();
-        Iterator<String> it = windows.iterator();
-        String parentId =it.next();
-        String childId = it.next();
+        Iterator<String> iterator = windows.iterator();
+        String parentId = iterator.next();
+        String childId = iterator.next();
         driver.switchTo().window(childId);
-        String username =  driver.findElement(By.cssSelector(".im-para.red")).getText().split(" ")[4];
+        System.out.println(driver.findElement(By.cssSelector("div[class='example'] h3")).getText());
         driver.switchTo().window(parentId);
-        driver.findElement(By.id("username")).sendKeys(username);
-
-
+        System.out.println(driver.findElement(By.xpath("//div[@class='example']//h3")).getText());
+        driver.quit();
     }
 }
