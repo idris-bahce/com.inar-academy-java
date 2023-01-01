@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 import java.util.List;
@@ -36,7 +37,6 @@ public class TestingPhotos {
                 "https://www.saucedemo.com/static/media/sauce-pullover-1200x1500.439fc934.jpg",
                 "https://www.saucedemo.com/static/media/red-onesie-1200x1500.1b15e1fa.jpg",
         "https://www.saucedemo.com/static/media/red-tatt-1200x1500.e32b4ef9.jpg"};
-
 
         int index = 0;
         for (WebElement element: webElements) {//we control each image

@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
@@ -27,5 +28,7 @@ public class JavaScriptExecutorDemo {
             sum += Integer.parseInt(element.getText());
         }
         System.out.println("Sum of the numbers in table is: " + sum);
+        int result=Integer.parseInt(driver.findElement(By.xpath("//div[@class=\"totalAmount\"]")).getText().split(": ")[1]);
+        Assert.assertEquals(sum,result);
     }
 }
