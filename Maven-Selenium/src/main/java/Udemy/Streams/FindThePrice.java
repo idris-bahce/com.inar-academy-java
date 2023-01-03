@@ -17,11 +17,18 @@ public class FindThePrice {
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
         driver.manage().window().maximize();
 
+
         driver.findElement(By.xpath("//tr/th[1]")).click();
-        List<WebElement> elements = driver.findElements(By.xpath("//tr/td[1]"));
-        List<String>price = elements.stream().filter(s->s.getText().equals("Beans")).map(s->getPriceVeggie(s)).collect(Collectors.toList());
-        System.out.println(price);
-        driver.close();
+        List<String> price;
+        do {
+            List<WebElement> elements = driver.findElements(By.xpath("//tr/td[1]"));
+            price = elements.stream().filter(s -> s.getText().equals("Rice")).map(s -> getPriceVeggie(s)).collect(Collectors.toList());
+            price.forEach(a-> System.out.println(a));
+            if (price.size()<1){
+                driver.findElement(By.cssSelector("a[aria-label='Next']")).click();
+            }
+        }while (price.size()<1);
+
     }
 
     private static String getPriceVeggie(WebElement s) {
