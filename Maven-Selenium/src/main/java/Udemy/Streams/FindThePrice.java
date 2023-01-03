@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FindThePrice {
     public static void main(String[] args) {
@@ -16,7 +17,16 @@ public class FindThePrice {
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
         driver.manage().window().maximize();
 
+        driver.findElement(By.xpath("//tr/th[1]")).click();
         List<WebElement> elements = driver.findElements(By.xpath("//tr/td[1]"));
-        elements.stream().filter(s->s.getText().equals("Rice"));
+        List<String>price = elements.stream().filter(s->s.getText().equals("Beans")).map(s->getPriceVeggie(s)).collect(Collectors.toList());
+        System.out.println(price);
+        driver.close();
+    }
+
+    private static String getPriceVeggie(WebElement s) {
+
+        String priceValue = s.findElement(By.xpath("following-sibling::td[1]")).getText();
+        return priceValue;
     }
 }
