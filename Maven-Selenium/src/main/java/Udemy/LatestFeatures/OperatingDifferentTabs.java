@@ -18,7 +18,8 @@ public class OperatingDifferentTabs {
         driver.get("https://rahulshettyacademy.com/angularpractice");
         driver.manage().window().maximize();
 
-        driver.switchTo().newWindow(WindowType.TAB);
+        //switching tabs or pages
+        driver.switchTo().newWindow(WindowType.WINDOW);
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> it = handles.iterator();
         String parentURL = it.next();
@@ -29,8 +30,12 @@ public class OperatingDifferentTabs {
         driver.switchTo().window(parentURL);
         WebElement nameBox = driver.findElement(By.xpath("(//input[@name='name'][1])[1]"));
         nameBox.sendKeys(nameOfCourse);
+        //screenshot of element
         File file = nameBox.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file,new File("logo.png"));
+        //width and height
+        System.out.println(nameBox.getRect().getHeight());
+        System.out.println(nameBox.getRect().getWidth());
 
     }
 }
