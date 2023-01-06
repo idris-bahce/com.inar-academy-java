@@ -1,5 +1,6 @@
 package UdemyTestNG;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Day4 {
@@ -10,6 +11,7 @@ public class Day4 {
     @Test(groups = {"smoke"})
     public void mobileloginCarLoan(){
         System.out.println("Mobileloginhome");
+        Assert.assertTrue(false);
     }
     @Test
     public void loginAPIHomeLoan(){

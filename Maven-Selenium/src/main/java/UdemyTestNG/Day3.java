@@ -1,9 +1,6 @@
 package UdemyTestNG;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class Day3 {
     @Parameters({"URL","usrname"})
@@ -17,6 +14,12 @@ public class Day3 {
     public void mobileloginCarLoan(){
         System.out.println("mobilelogincar");
     }
+    @Test(dataProvider = "getData")
+    public void mobileSignin(String username, String password){
+        System.out.println("sign in");
+        System.out.println(username);
+        System.out.println(password);
+    }
     @BeforeSuite
     public void beforeSuite(){
         System.out.println("This will be printed before 'suite' tag");
@@ -28,5 +31,19 @@ public class Day3 {
     @Test
     public void loginAPICarLoan(){
         System.out.println("APIlogincar");
+    }
+    @DataProvider
+    public Object getData(){
+        Object[][] data = new Object[3][2];
+
+        data[0][0] = "firstusername";
+        data[0][1] = "firstpassword";
+
+        data[1][0] = "secondusername";
+        data[1][1] = "secondpassword";
+
+        data[2][0] = "thirdusername";
+        data[2][1] = "thirdpassword";
+        return data;
     }
 }
