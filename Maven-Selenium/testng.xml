@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Loan Department">
+    <listeners>
+        <listener class-name="UdemyTestNG.Listeners"/>
+    </listeners>
     <parameter name="URL" value="qaclickacademy.com"/>
     <parameter name="usrname" value="123456"/>
     <test verbose="2" preserve-order="true"
